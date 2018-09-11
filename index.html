@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>SIU ICT FEST</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="application-name" content="PROJECT">
+  <meta name="description" content="">
+  
+  <link rel="icon" href="../images/logo.jpg"/>
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+       
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/teamstyle.css">
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="icon" href="./images/logo.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+  
+</head>
+<body >
+
+
+    
+
+          
+<section class="teamsec section">
+<div class ="bg">
+	<img src="images/logo.png">
+	</div>	
+<div class= "tablecontainer">
+
+	<h1> Programming Hero  </h1>
+	 <table class="responstable" id="myTable3">
+	  <tr>
+		<th>Name</th>
+		<th data-th="Driver details"><span>Score</span></th>
+		<th>First Try</th>
+		<th>Miss Fire</th>
+		<th>Total Time</th>
+	  </tr>
+	</table>
+	</div>
+</div>	</section>
+
+
+  
+
+          
+          
+          
+          
+
+
+
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+<script src="https://use.fontawesome.com/fa2c145b6a.js"></script>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js'></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+    
+    <!--Start of Tawk.to Script-->
+	
+	
+	  <script type="text/javascript">
+	    var config = {
+    apiKey: "AIzaSyDxlHAjSybR3ttps8BgNCPTbqfHtmmk6tQ",
+    authDomain: "proghero-community.firebaseapp.com",
+    databaseURL: "https://proghero-community.firebaseio.com/",
+    projectId: "proghero-community",
+    storageBucket: "",
+    messagingSenderId: "457597240770"
+  };
+  firebase.initializeApp(config);
+
+ firebase.database().ref("battle").orderByChild('score').on("child_added",snap=>{
+  
+    
+    
+
+    var table = document.getElementById("myTable3");
+    var data = "<tr><td>"+snap.child('name').val()+"</td><td>"+snap.child('score').val()+"</td><td>"+snap.child('first').val()+"</td><td>"+snap.child('miss').val()+"</td><td>"+snap.child('time').val()+"</td></tr>";
+    table.innerHTML +=data;
+});
+
+	</script>
+
+<!--End of Tawk.to Script-->
+</body>
+</html>

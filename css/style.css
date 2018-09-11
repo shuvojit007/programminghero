@@ -1,0 +1,15 @@
+.bg img{
+
+	height:30%;
+	width:30%;
+
+}
+.bg {
+	max-width : 600px;
+	margin : 0 auto;
+	text-align:center;
+	
+}
+.tablecontainer{
+	margin-top:-40px;
+}
